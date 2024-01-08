@@ -1,16 +1,20 @@
 {
   "name": "backendemo",
   "version": "1.0.0",
-  "description": "a backend project, tutorial given at chair aur code channel",
+  "description": "a backend project, tutorial given at chai aur code channel",
+  "type": "module",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "nodemon src/index.js"
   },
-  "author": "Harsh Shukla",
-  "license": "ISC",
   "keywords": [
     "javascript",
     "backend",
     "node"
-  ]
+  ],
+  "author": "Harsh Shukla",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^3.0.2"
+  }
 }
