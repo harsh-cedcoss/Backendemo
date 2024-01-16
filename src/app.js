@@ -1,6 +1,6 @@
 import express from "express";
 import cors from 'cors';
-import cookieParser from 'cookieParser';
+import cookieParser from 'cookie-parser';
 
 const app = express();
 
@@ -14,5 +14,11 @@ app.use(express.urlencoded({extended: true, limit: "16kb"}))    //middleware for
 app.use(express.static("public"))       //to store images, favicon etc to public folder
 
 app.use(cookieParser())     //to perform CRUD operations on cookies of client's browser
+
+//routes import
+import userRouter from './routes/user.routes.js'
+
+//routes declaration
+app.use("/api/v1/users", userRouter)
 
 export { app }
