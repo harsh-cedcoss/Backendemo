@@ -48,7 +48,7 @@ const userSchema = new mongoose.Schema({
 
 userSchema.pre("save", async function (next) {              //pre hook by mongoose, act as a middleware before saving data
     if(!this.isModified("password"))    return next();
-    this.password = bcrypt.hash(this.password, 10);         //bcrypt will encrypt the password whenever it gets saved
+    this.password = await crypt.hash(this.password, 10);         //bcrypt will encrypt the password whenever it gets saved
     next();
 })
 
